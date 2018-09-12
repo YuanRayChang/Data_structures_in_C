@@ -5,6 +5,7 @@
 #define COMPARE(x,y) ((x<y)?-1 : (x==y)?0 : 1)
 #define SWAP(x, y, t) (t=x, x=y, y=t)
 int binsearch(int list[], int searchnum, int left, int right);
+int binsearch_recur(int list[], int searchnum, int left, int right);
 void sort(int list[], int n);
 void main()
 {
@@ -29,10 +30,23 @@ int i, n;
 	}
 	printf("\n");
 
+	// Test the binary search function
 	int m;
 	printf("Input a number: ");
 	scanf("%d", &m);
 	int search_result = binsearch(list, m, 0, n);
+	
+	if (search_result==-1){
+		printf("The number is not in the list.\n");
+	}
+	else{
+		printf("The number is in index: %d \n", search_result);
+	}
+
+	// Test the binary search function with recursive algorithm
+	printf("Input a number: ");
+	scanf("%d", &m);
+	search_result = binsearch_recur(list, m, 0, n);
 	
 	if (search_result==-1){
 		printf("The number is not in the list.\n");
@@ -62,6 +76,22 @@ int binsearch(int list[], int searchnum, int left, int right)
 	return -1;
 }
 
+int binsearch_recur(int list[], int searchnum, int left, int right)
+{
+	int middle;
+	while(left<=right)
+	{
+		middle = (left+right)/2;
+		switch (COMPARE(list[middle], searchnum))
+		{
+			case -1: return binsearch_recur(list, searchnum, middle + 1, right);
+			case 0: return middle;
+			case 1: return binsearch_recur(list, searchnum, left, middle - 1);
+		}
+
+	}
+	return -1;
+}
 
 int compare(int x, int y)
 {

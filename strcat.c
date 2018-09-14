@@ -6,7 +6,7 @@ void my_strcat(char *s, char *t);
 void main()
 {
 	char src[] = "The first.";
-	char src2[] = "The Second.";
+	char src2[] = " The Second.";
 
 	my_strcat(src, src2);
 	printf("After strcat: %s\n", src);
@@ -18,5 +18,5 @@ void my_strcat(char *s, char *t)
 {
 	while(*s)
 		s++;
-	while((*s++ = *t++));
+	while(*s++ = *t++);
 }

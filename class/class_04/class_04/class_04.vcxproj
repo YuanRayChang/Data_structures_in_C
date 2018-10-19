@@ -152,11 +152,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Box.h" />
+    <ClInclude Include="BoxPtr.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Box.cpp" />
+    <ClCompile Include="BoxPtr.cpp" />
     <ClCompile Include="class_04.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="pch.cpp">

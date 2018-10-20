@@ -8,7 +8,16 @@
 class Carton: public Box
 {
 	public:
-		Carton(const char* pStr = "Cardboard"); // constructor
+		// constructor which can also act as default constructor
+		// calls default base constructor automatically
+		Carton(const char* pStr = "Cardboard"); 
+
+		// constructor explicitly calling the base constructor
+		Carton(double lv, double bv, double hv, const char* pStr = "Cardboard");
+		
+		// copy constructor
+		Carton(const Carton& aCarton);
+
 		~Carton(); // deconstructor
 
 		double volume() const;

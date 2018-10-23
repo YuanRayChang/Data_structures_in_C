@@ -10,3 +10,9 @@ Box::Box(double lv, double bv, double hv) : length(lv), breadth(bv), height(hv) 
 double Box::volume() const {
 	return length * breadth * height;
 }
+
+
+Box::~Box() {
+	cout << "Box deconstructor called" << endl;
+}
+	

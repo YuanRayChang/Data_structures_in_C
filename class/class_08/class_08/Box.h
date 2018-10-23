@@ -11,6 +11,8 @@ public:
 
 	virtual double volume() const;
 
+	~Box();
+
 protected:
 	double length;
 	double breadth;

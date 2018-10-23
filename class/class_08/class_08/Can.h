@@ -8,6 +8,7 @@ class Can : public Vessel
 public:
 	Can(double canDiameter, double canHeight);
 	virtual double volume() const;
+	~Can();
 protected:
 	double diameter;
 	double height;

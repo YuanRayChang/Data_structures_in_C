@@ -6,6 +6,7 @@ class Vessel
 {
 public:
 	virtual double volume() const = 0;
+	virtual ~Vessel();
 };
 
 #endif
